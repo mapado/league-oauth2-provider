@@ -3,6 +3,7 @@
 namespace Mapado\LeagueOAuth2Provider;
 
 use League\OAuth2\Client\Provider\AbstractProvider;
+use League\OAuth2\Client\Provider\Exception\IdentityProviderException;
 use League\OAuth2\Client\Token\AccessToken;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
@@ -32,7 +33,11 @@ class MapadoOAuthProvider extends AbstractProvider
     protected function checkResponse(ResponseInterface $response, $data)
     {
         if ($response->getStatusCode() >= 400) {
-            throw new IdentityProviderException($data['error_description'], $response->getStatusCode(), $data);
+            throw new IdentityProviderException(
+                $data['error_description'] ?? 'Error',
+                $response->getStatusCode(),
+                $data
+            );
         }
     }
 
