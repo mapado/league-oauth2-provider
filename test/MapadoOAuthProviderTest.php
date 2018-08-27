@@ -2,20 +2,20 @@
 
 namespace Mapado\LeagueOAuth2Provider\Tests\Units;
 
-use Mapado\LeagueOAuth2Provider\MapadoOAuthProvider as Provider;
+use Mapado\LeagueOAuth2Provider\MapadoOAuthProvider;
 use PHPUnit\Framework\TestCase;
 
 /**
  * Class MapadoOAuthProvider
  * @author Julien Deniau <julien.deniau@mapado.com>
  */
-class MapadoOAuthProvider extends TestCase
+class MapadoOAuthProviderTest extends TestCase
 {
     protected $provider;
 
     protected function setUp()
     {
-        $this->provider = new Provider([
+        $this->provider = new MapadoOAuthProvider([
             'clientId' => 'mock_client_id',
             'clientSecret' => 'mock_secret',
         ]);
