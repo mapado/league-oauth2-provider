@@ -1,6 +1,6 @@
 <?php
 
-namespace Mapado\LeagueOAuth2Provider;
+namespace Mapado\LeagueOAuth2Provider\Provider;
 
 use League\OAuth2\Client\Provider\AbstractProvider;
 use League\OAuth2\Client\Provider\Exception\IdentityProviderException;
@@ -8,7 +8,7 @@ use League\OAuth2\Client\Token\AccessToken;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
-class MapadoOAuthProvider extends AbstractProvider
+class MapadoOAuth2Provider extends AbstractProvider
 {
     public function getBaseAuthorizationUrl()
     {

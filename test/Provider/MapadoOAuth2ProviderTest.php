@@ -1,9 +1,9 @@
 <?php
 
-namespace Mapado\LeagueOAuth2Provider\Tests\Units;
+namespace Mapado\LeagueOAuth2Provider\Tests\Units\Provider;
 
 use GuzzleHttp\ClientInterface;
-use Mapado\LeagueOAuth2Provider\MapadoOAuthProvider;
+use Mapado\LeagueOAuth2Provider\Provider\MapadoOAuth2Provider;
 use PHPUnit\Framework\TestCase;
 use Prophecy\Argument;
 use Psr\Http\Message\ResponseInterface;
@@ -12,13 +12,13 @@ use Psr\Http\Message\ResponseInterface;
  * Class MapadoOAuthProvider
  * @author Julien Deniau <julien.deniau@mapado.com>
  */
-class MapadoOAuthProviderTest extends TestCase
+class MapadoOAuth2ProviderTest extends TestCase
 {
     protected $provider;
 
     protected function setUp()
     {
-        $this->provider = new MapadoOAuthProvider([
+        $this->provider = new MapadoOAuth2Provider([
             'clientId' => 'mock_client_id',
             'clientSecret' => 'mock_secret',
         ]);
